@@ -64,12 +64,12 @@
                 </li>
 
 
-                <li class="<?php if ($page_name == 'teacher') echo 'active'; ?> ">
-                    <a href="<?php echo base_url(); ?>student/teacher">
+                <!-- <li class="< ?php if ($page_name == 'teacher') echo 'active'; ?> ">
+                    <a href="< ?php echo base_url(); ?>student/teacher">
                         <i class="fa fa-angle-double-right p-r-10"></i>
-                        <span class="hide-menu"><?php echo get_phrase('Teacher'); ?></span>
+                        <span class="hide-menu">< ?php echo get_phrase('Teacher'); ?></span>
                     </a>
-                </li>
+                </li> -->
 
                     
                 <li class="<?php if ($page_name == 'class_mate') echo 'active'; ?> ">

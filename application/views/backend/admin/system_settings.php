@@ -161,7 +161,7 @@
 					 <label class="col-sm-12"><?php echo get_phrase('browse_image');?>*</label>        
 					 <div class="col-sm-12">
   		  			 <input type='file' class="form-control" name="userfile" onChange="readURL(this);" /required>
-       				 <img id="blah" src="<?php echo base_url(); ?>uploads/logo.png" alt="" height="200" width="200"/>
+       				 <img id="blah" src="<?php echo base_url(); ?>uploads/LOGO.png" alt="" height="200" width="200"/>
 					</div>
 					</div>	
 					

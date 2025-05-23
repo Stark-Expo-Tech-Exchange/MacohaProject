@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A complete and most powerful school system management system for all. Purchase and enjoy">
-    <meta name="author" content="OPTIMUM LINKUP COMPUTERS">
+    <meta name="author" content="STARK EXPO TECH EXCHANGE">
 		<?php 
 		//////////LOADING SYSTEM SETTINGS FOR ALL PAGES AND ACCOUNTS/////////
 		$system_title	=	$this->db->get_where('settings' , array('type'=>'system_title'))->row()->description;
 		?>
 
-    <link rel="icon"  sizes="16x16" href="<?php echo base_url() ?>uploads/logo.png">
+    <link rel="icon"  sizes="16x16" href="<?php echo base_url() ?>uploads/LOGO.png">
     <title><?php echo $page_title;?>&nbsp;|&nbsp;<?php echo $system_title;?></title>
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url(); ?>optimum/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" >
