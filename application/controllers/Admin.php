@@ -357,11 +357,21 @@ class Admin extends CI_Controller {
 
 
 
-    function get_class_section_subject($class_id){
-        $page_data['class_id']  =   $class_id;
-        $this->load->view('backend/admin/class_routine_section_subject_selector', $page_data);
+    // function get_class_section_subject($class_id){
+    //     $page_data['class_id']  =   $class_id;
+    //     $this->load->view('backend/admin/class_routine_section_subject_selector', $page_data);
 
+    // }
+    public function get_class_section_subject($class_id) {
+        $subjects = $this->db->get_where('subject', array('class_id' => $class_id))->result_array();
+        echo '<option value="">'.get_phrase('select_subject').'</option>';
+        foreach($subjects as $row) {
+            echo '<option value="' . $row['subject_id'] . '">' . $row['name'] . '</option>';
+            $this->load->view('backend/admin/class_routine_section_subject_selector', $page_data);
+
+        }
     }
+    
 
 
 
