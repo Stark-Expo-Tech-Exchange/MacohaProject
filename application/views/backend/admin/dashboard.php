@@ -33,17 +33,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-6">
+                    <!-- <div class="col-md-3 col-sm-6">
                         <div class="white-box">
                             <div class="r-icon-stats">
                                 <i class="ti-book bg-inverse"></i>
                                 <div class="bodystate">
-                                    <h4><?php echo $this->db->count_all_results('assignment');?></h4>
-                                    <span class="text-muted"><?php echo get_phrase('assignment');?></span>
+                                    <h4>< ?php echo $this->db->count_all_results('assignment');?></h4>
+                                    <span class="text-muted">< ?php echo get_phrase('assignment');?></span>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
             
                     <div class="col-md-3 col-sm-6">

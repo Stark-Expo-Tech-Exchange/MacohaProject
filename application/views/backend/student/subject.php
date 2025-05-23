@@ -1,7 +1,7 @@
 <div class="row">
                     <div class="col-sm-12">
 				  	<div class="panel panel-info">
-                            <div class="panel-heading"> <i class="fa fa-plus"></i>&nbsp;&nbsp;<?php echo get_phrase('add_subject');?></div>
+                            <div class="panel-heading"> <i class="fa fa-book"></i>&nbsp;&nbsp;<?php echo get_phrase('subjects');?></div>
                                 <div class="panel-body table-responsive">
 
                                 

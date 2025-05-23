@@ -1,27 +1,44 @@
  <!--row -->
  <div class="row">
-                    <div class="col-md-3 col-sm-6">
+                    <!-- <div class="col-md-3 col-sm-6">
                         <div class="white-box">
                             <div class="r-icon-stats">
                                 <i class="ti-user bg-megna"></i>
                                 <div class="bodystate">
-                                    <h4><?php echo $this->db->count_all_results('student');?></h4>
-                                    <span class="text-muted"><?php echo get_phrase('Students');?></span>
+                                    <h4>< ?php echo $this->db->count_all_results('student');?></h4>
+                                    <span class="text-muted">< ?php echo get_phrase('Students');?></span>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
+                    </div> -->
+
+                    <!-- allow the student to see available teachers -->
+                    <!-- <div class="col-md-3 col-sm-6">
                         <div class="white-box">
                             <div class="r-icon-stats">
                                 <i class="ti-user bg-info"></i>
                                 <div class="bodystate">
-                                    <h4><?php echo $this->db->count_all_results('teacher');?></h4>
-                                    <span class="text-muted"><?php echo get_phrase('Teachers');?></span>
+                                    <h4>< ?php echo $this->db->count_all_results('teacher');?></h4>
+                                    <span class="text-muted">< ?php echo get_phrase('Teachers');?></span>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
+
+                    <!-- allow assignment viewing -->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="white-box">
+                            <div class="r-icon-stats">
+                                <i class="ti-book bg-inverse"></i>
+                                <div class="bodystate">
+                                    <h4><?php echo $this->db->count_all_results('assignment');?></h4>
+                                    <span class="text-muted"><?php echo get_phrase('assignment');?></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+
+
                     <div class="col-md-3 col-sm-6">
                         <div class="white-box">
                             <div class="r-icon-stats">
