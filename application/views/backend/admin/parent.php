@@ -2,8 +2,8 @@
     <div class="col-sm-12">
         <div class="panel panel-info">
             <div class="panel-heading">
-				NEW PARENT
-	<div class="pull-right"><a href="#" data-perform="panel-collapse"><i class="fa fa-plus"></i>&nbsp;&nbsp;ADD NEW PARENT HERE<i class="btn btn-primary btn-xs"></i></a> <a href="#" data-perform="panel-dismiss"></a> </div></div>
+				NEW EMPLOYEE
+	<div class="pull-right"><a href="#" data-perform="panel-collapse"><i class="fa fa-plus"></i>&nbsp;&nbsp;ADD NEW EMPLOYEE HERE<i class="btn btn-primary btn-xs"></i></a> <a href="#" data-perform="panel-dismiss"></a> </div></div>
     <div class="panel-wrapper collapse out" aria-expanded="true">
                         <div class="panel-body">
 
@@ -11,7 +11,7 @@
 
 
  					<div class="form-group">
-                 	<label class="col-md-12" for="example-text"><?php echo get_phrase ('Name');?></label>
+                 	<label class="col-md-12" for="example-text"><?php echo get_phrase ('Full Name');?></label>
                     <div class="col-sm-12">
                             <input type="text" name="name" class="form-control">
                         </div>
@@ -26,7 +26,7 @@
                     </div>
 
                     <div class="form-group">
-                 	<label class="col-md-12" for="example-text"><?php echo get_phrase ('Phone');?></label>
+                 	<label class="col-md-12" for="example-text"><?php echo get_phrase ('Phone Number');?></label>
                     <div class="col-sm-12">
 
                             <input type="text" name="phone" class="form-control" >
@@ -44,7 +44,7 @@
 
 
                     <div class="form-group">
-                 	<label class="col-md-12" for="example-text"><?php echo get_phrase ('Address');?></label>
+                 	<label class="col-md-12" for="example-text"><?php echo get_phrase ('Physical Address');?></label>
                     <div class="col-sm-12">
 
                             <textarea class="form-control" name="address"></textarea>

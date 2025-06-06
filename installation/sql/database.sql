@@ -12,6 +12,55 @@ SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
+DROP TABLE IF EXISTS `admin1`;
+CREATE TABLE IF NOT EXISTS `admin1` (
+  `admin1_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `email` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `phone` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `password` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `level` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `login_status` longtext COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`admin1_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `admin1`
+--
+
+INSERT INTO `admin1` (`admin1_id`, `name`, `email`, `phone`, `password`, `level`, `login_status`) VALUES
+(1, 'admin1istrator', 'admin1@admin1.com', '0886283247', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', '1', '0'),
+(9, 'Instructor', 'instructor@macoda.com', '+265993076724', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', '2', '0');
+
+-- --------------------------------------------------------
+
+
+--
+-- Table structure for table `admin1_role`
+--
+
+DROP TABLE IF EXISTS `admin1_role`;
+CREATE TABLE IF NOT EXISTS `admin1_role` (
+  `admin1_role_id` int(11) NOT NULL AUTO_INCREMENT,
+  `admin1_id` int(11) NOT NULL,
+  `dashboard` int(11) NOT NULL,
+  `manage_academics` int(11) NOT NULL,
+  `manage_employee` int(11) NOT NULL,
+  `manage_student` int(11) NOT NULL,
+  `manage_attendance` int(11) NOT NULL,
+  `download_page` int(11) NOT NULL,
+  `manage_parent` int(11) NOT NULL,
+  `manage_alumni` int(11) NOT NULL,
+  PRIMARY KEY (`admin1_role_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin1_role`
+--
+
+INSERT INTO `admin1_role` (`admin1_role_id`, `admin1_id`, `dashboard`, `manage_academics`, `manage_employee`, `manage_student`, `manage_attendance`, `download_page`, `manage_parent`, `manage_alumni`) VALUES
+(4, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+(7, 9, 1, 1, 1, 1, 1, 1, 1, 1);
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -90,6 +139,7 @@ INSERT INTO `admin` (`admin_id`, `name`, `email`, `phone`, `password`, `level`, 
 
 -- --------------------------------------------------------
 
+
 --
 -- Table structure for table `admin_role`
 --
@@ -117,7 +167,44 @@ INSERT INTO `admin_role` (`admin_role_id`, `admin_id`, `dashboard`, `manage_acad
 (4, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 (7, 9, 1, 1, 1, 1, 1, 1, 1, 1);
 
--- --------------------------------------------------------
+-- accounts section starts here
+DROP TABLE IF EXISTS `accounts`;
+CREATE TABLE IF NOT EXISTS `accounts` (
+  `accounts_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `email` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `phone` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `password` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `level` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `login_status` longtext COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`accounts_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+ 
+INSERT INTO `accounts` (`accounts_id`, `name`, `email`, `phone`, `password`, `level`, `login_status`) VALUES
+(1, 'Accounts1', 'accounts1@accounts.com', '0886283247', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', '1', '0'),
+(9, 'Accounts2', 'accounts2@macoda.com', '+265993076724', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', '2', '0');
+
+ 
+DROP TABLE IF EXISTS `accounts_role`;
+CREATE TABLE IF NOT EXISTS `accounts_role` (
+  `accounts_role_id` int(11) NOT NULL AUTO_INCREMENT,
+  `accounts_id` int(11) NOT NULL,
+  `dashboard` int(11) NOT NULL,
+  `manage_academics` int(11) NOT NULL,
+  `manage_employee` int(11) NOT NULL,
+  `manage_student` int(11) NOT NULL,
+  `manage_attendance` int(11) NOT NULL,
+  `download_page` int(11) NOT NULL,
+  `manage_parent` int(11) NOT NULL,
+  `manage_alumni` int(11) NOT NULL,
+  PRIMARY KEY (`accounts_role_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+ 
+INSERT INTO `accounts_role` (`accounts_role_id`, `accounts_id`, `dashboard`, `manage_academics`, `manage_employee`, `manage_student`, `manage_attendance`, `download_page`, `manage_parent`, `manage_alumni`) VALUES
+(4, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+(7, 9, 1, 1, 1, 1, 1, 1, 1, 1);
+
 
 --
 -- Table structure for table `assignment`

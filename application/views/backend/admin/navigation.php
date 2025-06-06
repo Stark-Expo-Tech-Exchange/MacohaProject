@@ -20,9 +20,9 @@
                             }
                             ?>
 
-                    <a href="#" class="waves-effect"><img src="<?php echo base_url() . $face_file;?>" alt="user-img" class="img-circle"> <span class="hide-menu">
+                    <!-- <a href="#" class="waves-effect"><img src="< ?php echo base_url() . $face_file;?>" alt="user-img" class="img-circle"> <span class="hide-menu">
 
-                       <?php 
+                       < ?php 
                                 $account_type   =   $this->session->userdata('login_type');
                                 $account_id     =   $account_type.'_id';
                                 $name           =   $this->crud_model->get_type_name_by_id($account_type , $this->session->userdata($account_id), 'name');
@@ -32,13 +32,13 @@
 
                         <span class="fa arrow"></span></span>
                     
-                    </a>
-                        <ul class="nav nav-second-level">
+                    </a> -->
+                        <!-- <ul class="nav nav-second-level">
                             <li><a href="javascript:void(0)"><i class="ti-user"></i> My Profile</a></li>
-                            <li><a href="javascript:void(0)"><i class="ti-email"></i> Inbox</a></li>
+                            <li><a href="javascript:void(1)"><i class="ti-email"></i> Inbox</a></li>
                             <li><a href="javascript:void(0)"><i class="ti-settings"></i> Account Setting</a></li>
-                            <li><a href="<?php echo base_url();?>login/logout"><i class="fa fa-power-off"></i> Logout</a></li>
-                        </ul>
+                            <li><a href="< ?php echo base_url();?>login/logout"><i class="fa fa-power-off"></i> Logout</a></li>
+                        </ul> -->
                     </li>
 
 
@@ -120,7 +120,7 @@
     <?php $check_admin_permission = $this->db->get_where('admin_role', array('admin_id' => $this->session->userdata('login_user_id')))->row()->manage_employee;?>
     <?php if($check_admin_permission == '1'):?> 
 
-        <li class="staff"> <a href="javascript:void(0);" class="waves-effect"><i data-icon="&#xe006;" class="fa fa-angle-double-right p-r-10"></i> <span class="hide-menu"><?php echo get_phrase('Manage Employees');?><span class="fa arrow"></span></span></a>
+        <li class="staff"> <a href="javascript:void(0);" class="waves-effect"><i data-icon="&#xe006;" class="fa fa-user p-r-10"></i> <span class="hide-menu"><?php echo get_phrase('Manage Employees');?><span class="fa arrow"></span></span></a>
         
                         <ul class=" nav nav-second-level<?php if ($page_name == 'teacher')echo 'opened active';?> ">
 
@@ -136,6 +136,14 @@
 									 <span class="hide-menu"><?php echo get_phrase('teachers'); ?></span>
 								</a>
 							</li>
+
+                            <!-- add any route sectiom here -->
+                            <!-- <li class="< ?php if ($page_name == 'nonstaff') echo 'active'; ?> ">
+								<a href="< ?php echo base_url(); ?>nonstaff/nonstaff">
+								<i class="fa fa-angle-double-right p-r-10"></i>
+									 <span class="hide-menu">< ?php echo get_phrase('nonstaff'); ?></span>
+								</a>
+							</li> -->
 
                  		</ul>
    	 </li>
@@ -295,7 +303,7 @@
         <li class=" <?php if($page_name == 'parent')echo 'active';?>">
                     <a href="<?php echo base_url();?>admin/parent" >
                     <i class="fa fa-users p-r-10"></i>
-                    <span class="hide-menu"><?php echo get_phrase('manage_parents');?></span>
+                    <span class="hide-menu"><?php echo get_phrase('manage_non staff');?></span>
                     </a>    
         </li>
     <?php endif;?> <!---  Permission for Admin Download Page  ends here ------>

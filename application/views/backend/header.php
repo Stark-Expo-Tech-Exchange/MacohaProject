@@ -10,7 +10,7 @@
                         </li>
                     </ul>
             <ul class="nav navbar-top-links navbar-right pull-right">
-                <!--<li class="dropdown"> 
+                <li class="dropdown"> 
                     <a class="dropdown-toggle " data-toggle="dropdown" href="#"><i class="icon-envelope"></i>
                         <div class="notify"><span class="heartbit"></span><span class="point"></span></div>
                     </a>
@@ -47,10 +47,12 @@
                             </li>
                         </ul> 
             
-                </li>/.dropdown-messages -->
+                </li>
+
+                <!-- /.dropdown-messages -->
                     <!-- /.dropdown -->
 
-            <!-- <li class="dropdown"> 
+            <li class="dropdown"> 
                 <a class="dropdown-toggle " data-toggle="dropdown" href="#"><i class="icon-note"></i>
                     <div class="notify"><span class="heartbit"></span><span class="point"></span></div>
                 </a>
@@ -104,8 +106,8 @@
                             </li>
                         </ul>
                         
-                    </li> /.dropdown-tasks -->
-
+                    </li> 
+ 
 
                     
                     <!-- /.dropdown -->
@@ -141,8 +143,8 @@
                             <a href="<?php echo base_url();?><?php echo $this->session->userdata('login_type'); ?>/manage_profile"><i class="ti-user"></i> Edit Profile</a>
                             <?php endif;?>
                             </li>
-                            <li><a href="javascript:void(0)"><i class="ti-email"></i>  Inbox</a></li>
-                            <li><a href="javascript:void(0)"><i class="ti-settings"></i>  Account Setting</a></li>
+                            <!-- <li><a href="javascript:void(0)"><i class="ti-email"></i>  Inbox</a></li> -->
+                            <!-- <li><a href="javascript:void(0)"><i class="ti-settings"></i>  Account Setting</a></li> -->
                             <li><a href="<?php echo base_url();?>login/logout"><i class="fa fa-power-off"></i>  Logout</a></li>
                         </ul>
                         <!-- /.dropdown-user -->

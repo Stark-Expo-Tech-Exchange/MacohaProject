@@ -17,6 +17,7 @@ class Login extends CI_Controller {
         if ($this->session->userdata('hrm_login')== 1) redirect (base_url(). 'hrm/dashboard'); 
         if ($this->session->userdata('hostel_login')== 1) redirect (base_url(). 'hostel/dashboard');
         if ($this->session->userdata('accountant_login')== 1) redirect (base_url(). 'accountant/dashboard');
+        if ($this->session->userdata('accounts_login')== 1) redirect (base_url(). 'accounts/dashboard');
         if ($this->session->userdata('librarian_login')== 1) redirect (base_url(). 'librarian/dashboard'); 
         if ($this->session->userdata('teacher_login')== 1) redirect (base_url(). 'teacher/dashboard');   
         if ($this->session->userdata('parent_login')== 1) redirect (base_url(). 'parent/dashboard'); 
@@ -39,6 +40,12 @@ class Login extends CI_Controller {
           $this->session->set_flashdata('flash_message', get_phrase('Successfully Login'));
           redirect(base_url() . 'admin/dashboard', 'refresh');
         }
+
+        if($login_user == 'accounts') {
+          $this->session->set_flashdata('flash_message', get_phrase('Successfully Login'));
+          redirect(base_url() . 'accounts/dashboard', 'refresh');
+        }
+        
 
         if($login_user == 'hrm') {
           $this->session->set_flashdata('flash_message', get_phrase('Successfully Login'));
@@ -104,6 +111,4 @@ class Login extends CI_Controller {
 
      }
 
-
-    
-}
+    }

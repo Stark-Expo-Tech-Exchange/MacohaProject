@@ -61,7 +61,12 @@ class Crud_model extends CI_Model {
         foreach ($resi as $row)
             return $row['name'];
     }
-
+    function get_accounts_name($accounts_id) {
+        $query = $this->db->get_where('accounts', array('accounts_id' => $accounts_id));
+        $resi = $query->result_array();
+        foreach ($resi as $row)
+            return $row['name'];
+    }
     function get_teacher_info($teacher_id) {
         $query = $this->db->get_where('teacher', array('teacher_id' => $teacher_id));
         return $query->result_array();
@@ -293,7 +298,7 @@ class Crud_model extends CI_Model {
 
     function system_logo(){
 
-        move_uploaded_file($_FILES['userfile']['tmp_name'], 'uploads/logo.png');
+        move_uploaded_file($_FILES['userfile']['tmp_name'], 'uploads/LOGO.png');
     }
 
 
@@ -392,11 +397,6 @@ class Crud_model extends CI_Model {
 
 
     }
-
-
-
-    
-
 
 	
 	

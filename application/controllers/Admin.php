@@ -12,7 +12,7 @@ class Admin extends CI_Controller {
                 $this->load->model('exam_question_model');              // Load Apllication Model Here
                 $this->load->model('student_payment_model');            // Load Apllication Model Here
                 $this->load->model('event_model');                      // Load Apllication Model Here
-                $this->load->model('language_model');                      // Load Apllication Model Here
+                $this->load->model('language_model');                   // Load Apllication Model Here
                 $this->load->model('admin_model');                      // Load Apllication Model Here
     }
 

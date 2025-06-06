@@ -6,7 +6,7 @@
                             <div class="panel-body">
 <div class="printableArea">
         <div align="center">
-        <img src="<?php echo base_url();?>uploads/logo.png" width="60px" height="60px" class="img-circle"><br/>
+        <img src="<?php echo base_url();?>uploads/LOGO.png" width="60px" height="60px" class="img-circle"><br/>
         <span style="text-align:center; font-size:25px"><?php echo $system_name;?></span><br/>
         <span style="text-align:center; font-size:15px"><?php echo $system_address;?></span>
         </div>

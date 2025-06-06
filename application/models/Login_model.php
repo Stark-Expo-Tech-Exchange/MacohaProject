@@ -29,6 +29,23 @@ class Login_model extends CI_Model {
                     ->update('admin');
         }
 
+        // accounts for sampling out accounts dashboard
+
+        $query = $this->db->get_where('accounts', $credential);
+        if ($query->num_rows() > 0) {
+            $row = $query->row();
+  
+            $this->session->set_userdata('login_type', 'accounts');
+            $this->session->set_userdata('accounts_login', '1');
+            $this->session->set_userdata('accounts_id', $row->accounts_id);
+            $this->session->set_userdata('login_user_id', $row->accounts_id);
+            $this->session->set_userdata('name', $row->name);
+
+            return  $this->db->set('login_status', ('1'))
+                    ->where('accounts_id', $this->session->userdata('accounts_id'))
+                    ->update('accounts');
+        }
+
         $query = $this->db->get_where('parent', $credential);
         if ($query->num_rows() > 0) {
             $row = $query->row();
@@ -83,6 +100,12 @@ class Login_model extends CI_Model {
                     ->update('admin');
     }
 
+    
+    function logout_model_for_accounts(){
+        return  $this->db->set('login_status', ('0'))
+                    ->where('accounts_id', $this->session->userdata('accounts_id'))
+                    ->update('accounts');
+    }
     function logout_model_for_hrm(){
         return  $this->db->set('login_status', ('0'))
                     ->where('hrm_id', $this->session->userdata('hrm_id'))
