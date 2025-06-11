@@ -9,13 +9,15 @@
         <img src="<?php echo base_url();?>uploads/LOGO.png" width="60px" height="60px" class="img-circle"><br/>
         <span style="text-align:center; font-size:25px"><?php echo $system_name;?></span><br/>
         <span style="text-align:center; font-size:15px"><?php echo $system_address;?></span>
+        <br>
+        <h2>_________STUDENTS' ATTENDANCE REPORT___________</h2>
         </div>
         <br>
                                 
     <table cellpadding="0" cellspacing="0" border="0" class="table">
             <thead>
                 <tr>
-                    <td style="text-align: left;">Students<i class="fa fa-down-thin"></i>| Date:</td>
+                    <td style="text-align: left;">Students<i class="fa fa-down-thin"></i> | Date:</td>
                     <?php
                     $days = date("t",mktime(0,0,0,$month,1,$year)); 
                         for ($i=0; $i < $days; $i++) { 

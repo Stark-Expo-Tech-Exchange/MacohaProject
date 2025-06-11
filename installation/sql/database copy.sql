@@ -454,7 +454,9 @@ CREATE TABLE IF NOT EXISTS `department` (
 --
 
 INSERT INTO `department` (`department_id`, `name`, `department_code`) VALUES
-(2, 'Bursar', 'aed7c689d676c7c');
+(2, 'FINANCE', 'aed7c689d676c7c'),
+(3, 'ICT', 'aed7c689d676s4x'),
+(4, 'TECHNICAL', 'aed7c689d676h8n');
 
 -- --------------------------------------------------------
 
@@ -475,9 +477,9 @@ CREATE TABLE IF NOT EXISTS `designation` (
 --
 
 INSERT INTO `designation` (`designation_id`, `name`, `department_id`) VALUES
-(5, 'Tutorial', 2),
-(4, 'Youtube', 2),
-(6, 'Student', 2);
+(5, 'TRAINER', 2),
+(4, 'TRAINER', 2),
+(6, 'TRAINER', 2);
 
 -- --------------------------------------------------------
 
@@ -502,7 +504,9 @@ CREATE TABLE IF NOT EXISTS `dormitory` (
 --
 
 INSERT INTO `dormitory` (`dormitory_id`, `name`, `hostel_room_id`, `hostel_category_id`, `capacity`, `address`, `description`) VALUES
-(2, 'Wiz Hostel', 2, 3, '200', 'Address for hostel location', 'Address for hostel location');
+(2, 'Girls Hostel', 2, 3, '200', 'Address for hostel location', 'Address for hostel location'),
+(3, 'Boyss Hostel', 3, 3, '300', 'Address for hostel location', 'Address for hostel location');
+
 
 -- --------------------------------------------------------
 
@@ -683,7 +687,7 @@ CREATE TABLE IF NOT EXISTS `house` (
 --
 
 INSERT INTO `house` (`house_id`, `name`, `description`) VALUES
-(1, 'Purple House', 'This is for students in purple house');
+(1, 'General House', 'This is for borading students');
 
 -- --------------------------------------------------------
 
@@ -880,7 +884,7 @@ CREATE TABLE IF NOT EXISTS `parent` (
 --
 
 INSERT INTO `parent` (`parent_id`, `name`, `email`, `password`, `phone`, `address`, `profession`, `login_status`) VALUES
-(4, 'Mr. Parent', 'parent@parent.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', '+265993076724', 'Address', 'Learners', '0');
+(4, 'MACODA', 'macoda.info@macoda.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', '+265993076724', 'Address', 'Learners', '0');
 
 -- --------------------------------------------------------
 
@@ -972,13 +976,13 @@ INSERT INTO `settings` (`settings_id`, `type`, `description`) VALUES
 (3, 'address', '10, Area 14, Africa, Malawi, Lilongwe city.'),
 (4, 'phone', '+265 993 076 724'),
 (6, 'currency', 'MWK. '),
-(7, 'system_email', 'payment@optimumlinkup.com'),
+(7, 'system_email', 'macoda.info@macoda.com'),
 (11, 'language', 'english'),
 (12, 'text_align', 'left-to-right'),
 (16, 'skin_colour', 'blue'),
 (21, 'session', '2025-2030'),
 (22, 'footer', '2025 - All Rights Reserved By MACOHA LVTC - Powered By Stark Expo Tech Exchange'),
-(116, 'paypal_email', 'info@gosfem.com'),
+(116, 'paypal_email', 'info@macoda.com'),
 (119, 'stripe_setting', '[{\"stripe_active\":\"1\",\"testmode\":\"off\",\"secret_key\":\"test secret key\",\"public_key\":\"test public key\",\"secret_live_key\":\"live secret key\",\"public_live_key\":\"live public key\"}]'),
 (122, 'paypal_setting', '[{\"paypal_active\":\"1\",\"paypal_mode\":\"sandbox\",\"sandbox_client_id\":\"client id sandbox\",\"production_client_id\":\"client - production\"}]');
 
@@ -1046,45 +1050,45 @@ CREATE TABLE IF NOT EXISTS `student` (
   `name` longtext COLLATE utf8_unicode_ci NOT NULL,
   `birthday` longtext COLLATE utf8_unicode_ci NOT NULL,
   `age` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `place_birth` longtext COLLATE utf8_unicode_ci NULL,
+  `place_birth` longtext COLLATE utf8_unicode_ci NOT NULL,
   `sex` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `m_tongue` longtext COLLATE utf8_unicode_ci NULL,
+  `m_tongue` longtext COLLATE utf8_unicode_ci NOT NULL,
   `religion` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `blood_group` longtext COLLATE utf8_unicode_ci NULL,
-  `address` longtext COLLATE utf8_unicode_ci NULL,
-  `city` longtext COLLATE utf8_unicode_ci NULL,
-  `state` longtext COLLATE utf8_unicode_ci NULL,
+  `blood_group` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `address` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `city` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `state` longtext COLLATE utf8_unicode_ci NOT NULL,
   `nationality` longtext COLLATE utf8_unicode_ci NOT NULL,
   `phone` longtext COLLATE utf8_unicode_ci NOT NULL,
   `email` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `ps_attended` longtext COLLATE utf8_unicode_ci NULL,
-  `ps_address` longtext COLLATE utf8_unicode_ci NULL,
-  `ps_purpose` longtext COLLATE utf8_unicode_ci NULL,
-  `class_study` longtext COLLATE utf8_unicode_ci NULL,
-  `date_of_leaving` longtext COLLATE utf8_unicode_ci NULL,
-  `am_date` longtext COLLATE utf8_unicode_ci NULL,
-  `tran_cert` longtext COLLATE utf8_unicode_ci NULL,
-  `dob_cert` longtext COLLATE utf8_unicode_ci  NULL,
-  `mark_join` longtext COLLATE utf8_unicode_ci NULL,
+  `ps_attended` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `ps_address` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `ps_purpose` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `class_study` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `date_of_leaving` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `am_date` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `tran_cert` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `dob_cert` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `mark_join` longtext COLLATE utf8_unicode_ci NOT NULL,
   `physical_h` longtext COLLATE utf8_unicode_ci NOT NULL,
   `password` longtext COLLATE utf8_unicode_ci NOT NULL,
   `father_name` longtext COLLATE utf8_unicode_ci NULL,
   `mother_name` longtext COLLATE utf8_unicode_ci  NULL,
-  `class_id` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `section_id` int(11) NULL,
-  `parent_id` int(11) NULL,
-  `roll` longtext COLLATE utf8_unicode_ci NULL,
-  `transport_id` int(11) NULL,
-  `dormitory_id` int(11) NULL,
-  `house_id` int(11) NULL,
+  `class_id` longtext COLLATE utf8_unicode_ci NULL,
+  `section_id` int(11) NOT NULL,
+  `parent_id` int(11) NOT NULL,
+  `roll` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `transport_id` int(11) NOT NULL,
+  `dormitory_id` int(11) NOT NULL,
+  `house_id` int(11) NOT NULL,
   `student_category_id` int(11) NOT NULL,
-  `club_id` int(11) NULL,
-  `session` longtext COLLATE utf8_unicode_ci NULL,
-  `card_number` longtext COLLATE utf8_unicode_ci NULL,
-  `issue_date` longtext COLLATE utf8_unicode_ci NULL,
-  `expire_date` longtext COLLATE utf8_unicode_ci NULL,
-  `dormitory_room_number` longtext COLLATE utf8_unicode_ci NULL,
-  `more_entries` longtext COLLATE utf8_unicode_ci NULL,
+  `club_id` int(11) NOT NULL,
+  `session` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `card_number` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `issue_date` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `expire_date` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `dormitory_room_number` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `more_entries` longtext COLLATE utf8_unicode_ci NOT NULL,
   `login_status` longtext COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`student_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10000 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -1094,7 +1098,7 @@ CREATE TABLE IF NOT EXISTS `student` (
 --
 
 INSERT INTO `student` (`student_id`, `name`, `birthday`, `age`, `place_birth`, `sex`, `m_tongue`, `religion`, `blood_group`, `address`, `city`, `state`, `nationality`, `phone`, `email`, `ps_attended`, `ps_address`, `ps_purpose`, `class_study`, `date_of_leaving`, `am_date`, `tran_cert`, `dob_cert`, `mark_join`, `physical_h`, `password`, `father_name`, `mother_name`, `class_id`, `section_id`, `parent_id`, `roll`, `transport_id`, `dormitory_id`, `house_id`, `student_category_id`, `club_id`, `session`, `card_number`, `issue_date`, `expire_date`, `dormitory_room_number`, `more_entries`, `login_status`) VALUES
-(45, 'Student', '09/30/2003', '16', 'Lilongwe', 'female', 'Mother Tongue', 'Muslim', 'B+', 'Address', 'City', 'Lilongwe', 'Chichewa', '+0982847220', 'student@macoda.com', 'Previous school attended', 'Previous school address', 'Purpose Of Leaving', 'Class In Which Was Studying', '2024-08-10', '2024-08-19', 'Yes', 'Yes', 'Yes', 'No', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', '', '', '2', 0, 4, '5bf8161', 0, 2, 1, 2, 1, '2025-2027', '', '', '', '', '', '0');
+(45, 'Student', '09/30/2003', '16', 'Lilongwe', 'male', 'Mother Tongue', 'Muslim', 'B+', 'Address', 'City', 'Lilongwe', 'Chichewa', '+0982847220', 'student@macoda.com', 'Previous school attended', 'Previous school address', 'Purpose Of Leaving', 'Class In Which Was Studying', '2024-08-10', '2024-08-19', 'Yes', 'Yes', 'Yes', 'No', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', '', '', '2', 0, 4, '5bf8161', 0, 2, 1, 2, 1, '2025-2027', '', '', '', '', '', '0');
 
 -- --------------------------------------------------------
 
@@ -1158,8 +1162,8 @@ CREATE TABLE IF NOT EXISTS `teacher` (
   `teacher_number` longtext COLLATE utf8_unicode_ci NOT NULL,
   `birthday` longtext COLLATE utf8_unicode_ci NOT NULL,
   `sex` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `religion` longtext COLLATE utf8_unicode_ci NULL,
-  `blood_group` longtext COLLATE utf8_unicode_ci NULL,
+  `religion` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `blood_group` longtext COLLATE utf8_unicode_ci NOT NULL,
   `address` longtext COLLATE utf8_unicode_ci NOT NULL,
   `phone` longtext COLLATE utf8_unicode_ci NOT NULL,
   `email` longtext COLLATE utf8_unicode_ci NOT NULL,
@@ -1169,12 +1173,12 @@ CREATE TABLE IF NOT EXISTS `teacher` (
   `linkedin` longtext COLLATE utf8_unicode_ci NOT NULL,
   `qualification` longtext COLLATE utf8_unicode_ci NOT NULL,
   `marital_status` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `file_name` longtext COLLATE utf8_unicode_ci NULL,
+  `file_name` longtext COLLATE utf8_unicode_ci NOT NULL,
   `password` longtext COLLATE utf8_unicode_ci NOT NULL,
   `department_id` int(11) NOT NULL,
   `designation_id` int(11) NOT NULL,
   `date_of_joining` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `joining_salary` longtext COLLATE utf8_unicode_ci NULL,
+  `joining_salary` longtext COLLATE utf8_unicode_ci NOT NULL,
   `status` int(11) NOT NULL,
   `date_of_leaving` longtext COLLATE utf8_unicode_ci NOT NULL,
   `bank_id` int(11) NOT NULL,

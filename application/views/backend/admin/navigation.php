@@ -174,7 +174,7 @@
                     <li class="<?php if ($page_name == 'new_student') echo 'active'; ?> ">
                         <a href="<?php echo base_url(); ?>admin/new_student">
                         <i class="fa fa-angle-double-right p-r-10"></i>
-                              <span class="hide-menu"><?php echo get_phrase('admission_form'); ?></span>
+                              <span class="hide-menu"><?php echo get_phrase('Enroll/Register Student'); ?></span>
                         </a>
                     </li>
 

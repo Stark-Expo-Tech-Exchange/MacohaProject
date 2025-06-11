@@ -80,7 +80,12 @@
                 $page_name == 'attendance_report')
             echo 'opened active';
             ?>">
-                    
+                <li class="<?php if ($page_name == 'student_information' || $page_name == 'student_information' || $page_name == 'view_student') echo 'active'; ?> ">
+                        <a href="<?php echo base_url(); ?>admin/student_information">
+                        <i class="fa fa-angle-double-right p-r-10"></i>
+                              <span class="hide-menu"><?php echo get_phrase('list_students'); ?></span>
+                        </a>
+                </li>
 
                 <li class="<?php if ($page_name == 'manage_attendance') echo 'active'; ?> ">
                     <a href="<?php echo base_url(); ?>teacher/manage_attendance/<?php echo date("d/m/Y"); ?>">
