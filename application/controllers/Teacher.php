@@ -151,6 +151,34 @@ class Teacher extends CI_Controller {
             $this->load->view('backend/index', $page_data);
         }
     
+
+        
+        // for teacher assigning marks to a student here belwo code
+        public function manage_marks($param1 = '', $param2 = '', $param3 = '')
+{
+    if ($this->session->userdata('teacher_login') != 1)
+        redirect(base_url(), 'refresh');
+
+    if ($param1 == 'create') {
+        $data['class_id']      = $this->input->post('class_id');
+        $data['subject_id']    = $this->input->post('subject_id');
+        $data['student_id']    = $this->input->post('student_id');
+        $data['exam_name']     = $this->input->post('exam_name');
+        $data['mark_obtained'] = $this->input->post('mark_obtained');
+        $data['comment']       = $this->input->post('comment');
+        $data['year']          = $this->db->get_where('settings', array('type' => 'session'))->row()->description;
+
+        $this->db->insert('mark', $data);
+        $this->session->set_flashdata('flash_message', get_phrase('Mark added successfully'));
+        redirect(base_url().'index.php?teacher/manage_marks', 'refresh');
+    }
+
+    $page_data['page_name']  = 'manage_marks';
+    $page_data['page_title'] = get_phrase('Manage Marks');
+    $this->load->view('backend/index', $page_data);
+}
+
+// teacher score assignment code ends here
     
         /******************** Load attendance with ajax code starts from here **********************/
         function loadAttendanceReport($class_id, $section_id, $month, $year)
@@ -179,7 +207,7 @@ class Teacher extends CI_Controller {
         }
         /******************** /Ends here **********************/
      /***********  The function below manages school marks ***********************/
-     function marks ($exam_id = null, $class_id = null, $student_id = null){
+     function marks ($exam_id = null, $class_id = null, $student_id = null, $subject_id = null){
 
         if($this->input->post('operation') == 'selection'){
 

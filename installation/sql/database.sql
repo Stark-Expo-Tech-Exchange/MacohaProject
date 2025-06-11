@@ -583,6 +583,61 @@ INSERT INTO `exam` (`exam_id`, `name`, `comment`, `timestamp`) VALUES
 -- Table structure for table `exam_question`
 --
 
+-- exam results for student to view
+CREATE TABLE exam_results (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  student_id INT,
+  subject_name VARCHAR(100),
+  exam_type VARCHAR(50), -- e.g., Midterm, Final
+  marks_obtained FLOAT,
+  total_marks FLOAT,
+  grade VARCHAR(5),
+  exam_date DATE
+);
+
+
+-- 
+-- class titmetable foir student
+CREATE TABLE class_timetable (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  class_name VARCHAR(50),
+  day_of_week VARCHAR(20), -- e.g., Monday, Tuesday
+  subject_name VARCHAR(100),
+  start_time TIME,
+  end_time TIME,
+  teacher_name VARCHAR(100)
+);
+
+-- timetables generated
+CREATE TABLE timetable (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    class_id INT,
+    subject VARCHAR(255),
+    teacher_id INT,
+    day VARCHAR(50),
+    start_time TIME,
+    end_time TIME,
+    room VARCHAR(100),
+    year VARCHAR(20)
+);
+
+-- 
+CREATE TABLE mark (
+    mark_id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id INT NOT NULL,
+    class_id INT NOT NULL,
+    subject_id INT NOT NULL,
+    exam_name VARCHAR(100) NOT NULL,
+    mark_obtained FLOAT NOT NULL,
+    comment TEXT,
+    year VARCHAR(20),
+    date_recorded DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+--
+-- Table structure for table `exam_question`
+--
+
 DROP TABLE IF EXISTS `exam_question`;
 CREATE TABLE IF NOT EXISTS `exam_question` (
   `exam_question_id` int(11) NOT NULL AUTO_INCREMENT,

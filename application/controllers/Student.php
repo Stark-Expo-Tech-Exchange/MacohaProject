@@ -192,6 +192,61 @@ class Student extends CI_Controller {
 
         }
 
+        // new sections added below fior students
+        // Load exam results page
+// function exam_results() {
+//     if ($this->session->userdata('student_login') != 1)
+//         redirect(base_url(), 'refresh');
+
+//     $page_data['page_name'] = 'exam_results';
+//     $page_data['page_title'] = get_phrase('Exam Results');
+//     $this->load->view('backend/index', $page_data);
+// }
+
+// // Load class timetable page
+// function class_timetable() {
+//     if ($this->session->userdata('student_login') != 1)
+//         redirect(base_url(), 'refresh');
+
+//     $page_data['page_name'] = 'class_timetable';
+//     $page_data['page_title'] = get_phrase('Class Timetable');
+//     $this->load->view('backend/index', $page_data);
+// }
+
+public function view_timetable()
+{
+    $page_data['page_name']  = 'view_timetable';
+    $page_data['page_title'] = get_phrase('Class Timetable');
+    $this->load->view('backend/index', $page_data);
+}
+
+public function view_exam_results()
+{
+    $student_id = $this->session->userdata('student_id');
+    $class_id = $this->db->get_where('student', ['student_id' => $student_id])->row()->class_id;
+    $running_year = $this->db->get_where('settings', ['type' => 'session'])->row()->description;
+
+    $page_data['student_id'] = $student_id;
+    $page_data['class_id'] = $class_id;
+    $page_data['running_year'] = $running_year;
+    $page_data['page_name']  = 'view_exam_results';
+    $page_data['page_title'] = get_phrase('Exam Results');
+    $this->load->view('backend/index', $page_data);
+}
+
+// for viewing exam results
+public function exam_results($param1 = '')
+{
+    if ($this->session->userdata('student_login') != 1)
+        redirect(base_url(), 'refresh');
+
+    $page_data['page_name']  = 'exam_results';
+    $page_data['page_title'] = get_phrase('Exam Results');
+    $this->load->view('backend/index', $page_data);
+}
+
+
+
 
 
 }

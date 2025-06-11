@@ -227,14 +227,7 @@ class Admin extends CI_Controller {
         $this->load->view('backend/index', $page_data);
     }
 
-
  
-
-
-
-
-
-  
 
 
     function teacher ($param1 = null, $param2 = null, $param3 = null){
@@ -314,6 +307,56 @@ class Admin extends CI_Controller {
         $this->load->view('backend/index', $page_data);
 
     }
+
+    // *******************timetable function
+//     public function timetable($action = '', $id = '')
+// {
+//     if ($action == 'create') {
+//         $data['class_id']   = $this->input->post('class_id');
+//         $data['subject']    = $this->input->post('subject');
+//         $data['teacher_id'] = $this->input->post('teacher_id');
+//         $data['day']        = $this->input->post('day');
+//         $data['start_time'] = $this->input->post('start_time');
+//         $data['end_time']   = $this->input->post('end_time');
+//         $data['room']       = $this->input->post('room');
+//         $data['year']       = $this->db->get_where('settings', array('type' => 'session'))->row()->description;
+
+//         $this->db->insert('timetable', $data);
+//         $this->session->set_flashdata('message', 'Timetable entry added.');
+//         redirect(base_url() . 'admin/manage_timetable', 'refresh');
+//     }
+
+//     // Show page
+//     $page_data['page_name']  = 'manage_timetable';
+//     $page_data['page_title'] = get_phrase('Manage Timetable');
+//     $this->load->view('backend/index', $page_data);
+// }
+
+// // ***************timetable section ends here
+
+public function timetable($action = '', $id = '')
+{
+    if ($action == 'create') {
+        $data['class_id']   = $this->input->post('class_id');
+        $data['subject']    = $this->input->post('subject');
+        $data['teacher_id'] = $this->input->post('teacher_id');
+        $data['day']        = $this->input->post('day');
+        $data['start_time'] = $this->input->post('start_time');
+        $data['end_time']   = $this->input->post('end_time');
+        $data['room']       = $this->input->post('room');
+        $data['year']       = $this->db->get_where('settings', array('type' => 'session'))->row()->description;
+
+        $this->db->insert('timetable', $data);
+        $this->session->set_flashdata('message', 'Timetable entry added.');
+        redirect(base_url() . 'admin/manage_timetable', 'refresh');
+    }
+
+    // Show timetable form
+    $page_data['page_name']  = 'manage_timetable';
+    $page_data['page_title'] = get_phrase('Manage Timetable');
+    $this->load->view('backend/index', $page_data);
+}
+
 
 
     /***********  The function manages Section  ***********************/

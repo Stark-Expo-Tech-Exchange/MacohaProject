@@ -71,6 +71,42 @@
                         </div>
                     </div>
 
+                    <!-- new sections added below -->
+                     <!-- View Exam Results -->
+<div class="col-md-3 col-sm-6">
+    <div class="white-box">
+        <div class="r-icon-stats">
+            <i class="ti-agenda bg-warning"></i>
+            <div class="bodystate">
+                <h4><?php echo get_phrase('View'); ?></h4>
+                <span class="text-muted"><?php echo get_phrase('Exam Results'); ?></span>
+            </div>
+        </div>
+        <a href="<?php echo base_url(); ?>index.php?student/exam_results" class="btn btn-info">
+    <?php echo get_phrase('View Exam Results'); ?>
+</a>
+        <!-- <a href="< ?php echo base_url(); ?>index.php?student/exam_results" class="btn btn-block btn-warning">< ?php echo get_phrase('View Results'); ?></a> -->
+    </div>
+</div>
+
+<!-- View Class Timetable -->
+<div class="col-md-3 col-sm-6">
+    <div class="white-box">
+        <div class="r-icon-stats">
+            <i class="ti-timer bg-primary"></i>
+            <div class="bodystate">
+                <h4><?php echo get_phrase('View'); ?></h4>
+                <span class="text-muted"><?php echo get_phrase('Class Timetable'); ?></span>
+            </div>
+        </div>
+        <a href="<?php echo base_url(); ?>index.php?student/view_timetable" class="btn btn-success">
+    <?php echo get_phrase('View Class Timetable'); ?>
+</a>
+        <!-- <a href="< ?php echo base_url(); ?>index.php?student/class_timetable" class="btn btn-block btn-primary">< ? php echo get_phrase('View Timetable'); ?></a> -->
+    </div>
+</div>
+
+
                
           
                 <!--/row -->

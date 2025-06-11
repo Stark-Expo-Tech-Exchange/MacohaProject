@@ -60,6 +60,15 @@
                 </a>
             </li>
 
+            <!-- for assigning student scores below code -->
+            <li>
+                <a href="<?php echo base_url(); ?>index.php?teacher/manage_marks">
+                <i class="ti-pencil-alt"></i>
+                    <span><?php echo get_phrase('Manage Marks'); ?></span>
+                </a>
+            </li>
+
+
    
 
                 <li class="<?php if ($page_name == 'study_material') echo 'active'; ?> ">

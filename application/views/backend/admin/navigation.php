@@ -187,6 +187,13 @@
                         </a>
                     </li>
 
+                    <li>
+                        <a href="<?php echo base_url(); ?>admin/manage_timetable">
+                        <i class="fa fa-calendar"></i>
+                            <span><?php echo get_phrase('Manage Timetable'); ?></span>
+                        </a>
+                    </li>
+
 
     <li class="<?php if ($page_name == 'studentCategory') echo 'active'; ?> ">
                         <a href="<?php echo base_url(); ?>studentcategory/studentCategory">
